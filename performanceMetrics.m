@@ -14,6 +14,10 @@ algo = 'FI';
 % set to 1 to start R computation from 0 matrix or from the identity matrix
 % By default we start fromt he identity matrix
 useId = 1;
+util = (arr_rate*((pb*(1/mu_b)*T)+(ps*(1/mu_s)*1)))/N;
+if util <= 0.3
+    useId = 0;
+end
 % n_pis gives the number i of \bold pi_i vectors produced by matrix_geom
 % function
 n_pis = 100;
