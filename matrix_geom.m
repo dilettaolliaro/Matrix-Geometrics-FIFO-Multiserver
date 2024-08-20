@@ -25,10 +25,14 @@ function [R, pis] = matrix_geom(N, T, arr_rate, pb, mu_s, mu_b, algo, useId, n_p
     R = [];
     if useId
         % Using identity matrix;
-        R = GIM1_R(A,'A', algo, 'StartValue', eye(size(L)));
+        [R,numit] = GIM1_R(A,'A', algo, 'StartValue', eye(size(L)));
+        disp('Identity matrix');
+        disp(numit);
     else
         % 'Using zero matrix;
-        R = GIM1_R(A,'A', algo);
+        [R,numit] = GIM1_R(A,'A', algo);
+        disp('Zero matrix');
+        disp(numit);
     end
     
     bl = Bs_prime{1};

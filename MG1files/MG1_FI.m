@@ -1,4 +1,4 @@
-function G=MG1_FI(A,varargin)
+function [G, numit]=MG1_FI(A,varargin)
 %MG1_FI Functional Iterations for M/G/1-Type Markov Chains [Neuts] 
 %
 %   G=MG1_FI(A) computes the minimal nonnegative solution to the 

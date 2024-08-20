@@ -15,6 +15,7 @@ algo = 'FI';
 % By default we start fromt he identity matrix
 useId = 1;
 util = (arr_rate*((pb*(1/mu_b)*T)+(ps*(1/mu_s)*1)))/N;
+disp(util);
 if util <= 0.3
     useId = 0;
 end

@@ -1,4 +1,4 @@
-function R=GIM1_R(A,Dual,Algor,varargin)
+function [R,numit]=GIM1_R(A,Dual,Algor,varargin)
 %GIM1_R determines R matrix of a GI/M/1-Type Markov Chain  
 %
 %   R=GIM1_R(A,Dual,Algor) computes the minimal nonnegative solution to the 
@@ -75,9 +75,10 @@ else % Bright dual
     end
 end
 
+numit=0;
 switch Algor
     case 'FI'
-        G=MG1_FI(A,varargin{:});
+        [G,numit]=MG1_FI(A,varargin{:});
     case 'CR'
         G=MG1_CR(A,varargin{:});
     case 'NI'
